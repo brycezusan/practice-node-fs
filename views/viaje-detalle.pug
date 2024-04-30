@@ -1,0 +1,14 @@
+extends ./layouts/index
+block contenido
+  h1(class="mt-5 text-center") #{pagina}
+  main.container.mt-5
+    .row.align-items-center
+      .col-md-5
+        img(src=`/img/destinos_${data.imagen}_ln.jpg` alt="imagen viaje" , class="img-fluid")
+      .col-md-7
+        h2=data.titulo
+        p Fecha: #{data.fecha_ida}
+        p Disponibles: #{data.disponibles}
+        p Precio: $#{data.precio}
+        p Descripcion: #{data.descripcion}
+        

@@ -1,0 +1,18 @@
+extends ./layouts/index
+block contenido
+    h1(class="mt-5 text-center") #{pagina}
+    main.container.mt-5
+      .row.proximos-viajes
+        each viaje in viajes
+          div.col-md-l.col-lg-4.mb-4
+            .card 
+              img.card-img-top(src=`img/destinos_${viaje.imagen}.jpg`)
+            .card-body
+              h2=viaje.titulo
+              p Fechas:
+                | #{viaje.fecha_ida} al #{viaje.fecha_vuelta}
+              p Disponibles : 
+                | #{viaje.disponibles}
+              p=viaje.descripcion.substr(0,90) + '...'
+              a(href=`viajes/${viaje.slug}`, class="btn btn-success btn-block") Más Información
+

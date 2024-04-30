@@ -1,0 +1,20 @@
+extends ./layouts/index
+block contenido
+    main.container.mt-5
+      .row
+        include ./layouts/testimoniales
+        .col-md-12
+          h2.text-center Agrega un Testimonial
+          .row.justify-content-center
+            .col-md-8
+              form(action="/testimonios" method="post")
+                .form-group
+                  label(for='nombre') Nombre
+                  input#nombre.form-control(type='text', placeholder='Tu Nombre', name="nombre")
+                .form-group
+                  label(for='correo') Correo Electrónico
+                  input#correo.form-control(type='email', placeholder='Tu Correo Electrónico', name="correo")
+                .form-group
+                  label(for='mensaje') Mensaje
+                  textarea#mensaje.form-control(name="mensaje", rows=3, placeholder="Tu Mensaje")
+                input.btn.btn-success.btn-block(type="submit")
